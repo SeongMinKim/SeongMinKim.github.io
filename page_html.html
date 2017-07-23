@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://david20120720.github.io/style.css">
+</head>
+<body id="target">
+  <header>
+    <h1><a href="https://david20120720.github.io/index.html">Home</a></h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="https://david20120720.github.io/page_html.html">나의 소개</a></li>
+      <li><a href="https://david20120720.github.io/page_vc.html">관심 분야</a></li>
+      <li><a href="https://david20120720.github.io/page_op.html">최근 동향 </a></li>
+    </ul>
+  </nav>
+  <div id="control">
+    <input type="button" value="white" onclick="document.getElementById('target').className='white'" />
+    <input type="button" value="black" onclick="document.getElementById('target').className='black'"  />
+  </div>
+  <article>
+    <h2>나의소개</h2>
+    우연히 3D 프린터를 접하면서 Maker활동에 관심을 갖게되었습니다. <br>
+    PC상의 모델링 화일을 실제공간으로 프린팅을 하면서 하고싶은 일들이 떠오르게 되었습니다 <br>
+    어린시설 새 소리나는 전자 키트를 갖고놀았던 추억이 떠올랐습니다. 과거에 만드는것을 좋아했었는데 사회생활을 하느라 잊고지냈던것 같습니다 <br>
+    3D 프린터를 자작으로 제작하고,미세먼지 측정장치,의수, 웹서비스 제작을 하는과정에서 만드는 재미/즐거움을 느끼고 있습니다 <br>
+    인간은 천성적으로 MAKER의 기질을 갖고있는것 같습니다.
+    태초의 인류부터 현재까지 각종 도구를 만들고, 이를 이용해서 지구의 만물을 지배하는데 최대한 이용을 해온것도, 인간의 만들기 유전자 의 영향이 큰것같습니다. <BR>
+    이러한 도구의 개발이 모든 사람들에게 도움이 되는 방향으로 가기를 바랍니다.<br>
+    빨리가는것 보단, 방향이 중요한것 같습니다, 모든사람에게 도움이 되는 방향인지, 일부에게만 도움이 되는건지, 아니며 모두에게 나쁜 방향인지에 대해 짚어가면서 나아갈 필요가 있는것 같습니다.<br><br>
+
+    최근엔 코딩교육용 로봇, 인공지능에 관심을 갖게되었습니다<br><br><br>
+  </article>
+  <article>
+    <h4>사람,지구상 모든사람들이 더불어 살아가는데 도움이 되는 기술을 지향합니다.</h4>
+  </article>
+
+<!--start of google map js Script-->
+<div id="map" style="width:1024px;height:600px"></div>
+<script>
+function myMap() {
+  var azit = new Array();
+  var azitColor = new Array();
+  var zoomNumber = 2;
+  azit[0] = new google.maps.LatLng(38.8799304,30.7500838);
+  azitColor[0] = "GREEN";
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: azit[0], zoom: zoomNumber};
+  var map = new google.maps.Map(mapCanvas,mapOptions);
+
+  for(var i in azit) {
+    var myCity = new google.maps.Circle({
+    center: azit[i],
+    radius: 100,
+    strokeColor: "BLACK",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: azitColor[i],
+    fillOpacity: 0.4
+  });
+  myCity.setMap(map);
+  }
+};
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOYundwm4l2yUb7A3nfKoj5V99wr3n9O0&callback=myMap"></script>
+<!--ens of google map js Script-->
+
+</body>
+</html>
